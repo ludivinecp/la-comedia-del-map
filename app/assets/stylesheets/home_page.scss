@@ -1,0 +1,24 @@
+// Place all the styles related to the home-page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.borderz {
+  padding: 2px 0 0 2px !important;
+}
+.ongoing, .best, .footer, .header {
+  border: solid black 1px;
+}
+.header, .footer{
+  background: #e0e0e0;
+  height: 70px;
+  
+  }
+.ongoing{
+  background: #ffedb8;
+  height: 640px;
+
+}
+.best{
+  background: #c7daf6;
+  height: 640px;
+}

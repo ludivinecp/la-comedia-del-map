@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails_admin'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'

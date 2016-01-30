@@ -6,8 +6,8 @@
 
   <p>Synopsys : <%=@play.synopsys%></p>
   
-  <%@play_actors.each do |actor|%>
+  <%@play.actors.each do |actor|%>
     <ul>
-      <li><%=@play_actors.try(:firstname)%> <%=@play_actors.try(:lastname)%></li>
+      <li><%=actor.try(:firstname)%> <%=actor.try(:lastname)%></li>
     </ul>
   <%end%>

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'plays/show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home_page#index'
+  get "/plays/:id" => "plays#show"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

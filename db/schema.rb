@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20160130152042) do
     t.string   "firstname"
     t.string   "lastname"
     t.date     "date_birth"
-    t.boolean  "is_male"
+    t.boolean  "is_male",    default: true
     t.integer  "play_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "actors", ["play_id"], name: "index_actors_on_play_id"

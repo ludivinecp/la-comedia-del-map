@@ -48,3 +48,15 @@ Actor.create([{ firstname: "Anne",
                 is_male: false,
                 play_id: 3
 }])
+
+
+
+User.create([{ email: 'admin@wcs.com',
+              password: 'azertyui',
+              admin: true
+  }])
+
+User.create([{ email: 'user@wcs.com',
+              password: 'azertyui',
+  }])
+

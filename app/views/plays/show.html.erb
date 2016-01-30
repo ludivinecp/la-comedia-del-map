@@ -1,13 +1,15 @@
 <h1><%=@play.title%></h1>
-  <p>Début: <%=@play.date_start.strftime("%d/%m/%Y")%> à <%=@play.date_start.strftime("%H:%M")%>
+  <p>Début: <%=@play.date_start.try(:date_start)%> à <%=@play.date_start.try(:date_start)%>
   </br>
-    Fin: <%=@play.date_end.strftime("%d/%m/%Y")%> à <%=@play.date_start.strftime("%H:%M")%>
+    Fin: <%=@play.try(:date_end)%> à <%=@play.try(:date_end)%>
   </p>
 
   <p>Synopsys : <%=@play.synopsys%></p>
-  
+
+  <p>Acteurs :
   <%@play.actors.each do |actor|%>
     <ul>
       <li><%=actor.try(:firstname)%> <%=actor.try(:lastname)%></li>
     </ul>
   <%end%>
+  </p>

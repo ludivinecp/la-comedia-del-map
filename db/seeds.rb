@@ -55,3 +55,13 @@ Theater.create([{ name: "Théâtre principal",
                   availibility_to: 16/03/16
 }])
 
+
+User.create([{ email: 'admin@wcs.com',
+              password: 'azertyui',
+              admin: true
+  }])
+
+User.create([{ email: 'user@wcs.com',
+              password: 'azertyui',
+  }])
+

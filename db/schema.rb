@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130194643) do
+ActiveRecord::Schema.define(version: 20160130212837) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "firstname"
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20160130194643) do
 
   add_index "actors", ["play_id"], name: "index_actors_on_play_id"
 
+  create_table "ongoing_plays", force: :cascade do |t|
+    t.datetime "playing_from"
+    t.datetime "playing_to"
+    t.integer  "plays_id"
+    t.integer  "theaters_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "ongoing_plays", ["plays_id"], name: "index_ongoing_plays_on_plays_id"
+  add_index "ongoing_plays", ["theaters_id"], name: "index_ongoing_plays_on_theaters_id"
+
   create_table "plays", force: :cascade do |t|
     t.string   "title"
     t.datetime "date_start"
@@ -32,23 +44,50 @@ ActiveRecord::Schema.define(version: 20160130194643) do
     t.text     "synopsys"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "theater_id"
   end
 
+  add_index "plays", ["theater_id"], name: "index_plays_on_theater_id"
+
+  create_table "theaters", force: :cascade do |t|
+    t.integer  "number_of_places"
+    t.datetime "availibility_from"
+    t.datetime "availibility_to"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "name"
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.integer  "price"
+    t.datetime "date"
+    t.datetime "hour"
+    t.integer  "number_of_people"
+    t.integer  "user_id"
+    t.integer  "plays_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "tickets", ["plays_id"], name: "index_tickets_on_plays_id"
+  add_index "tickets", ["user_id"], name: "index_tickets_on_user_id"
+
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "firstname"
     t.string   "lastname"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -48,3 +48,10 @@ Actor.create([{ firstname: "Anne",
                 is_male: false,
                 play_id: 3
 }])
+
+Theater.create([{ name: "Théâtre principal",
+                  number_of_places: 350,
+                  availibility_from: 12/02/16,
+                  availibility_to: 16/03/16
+}])
+

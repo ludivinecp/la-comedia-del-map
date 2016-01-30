@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'tickets/new'
+
+  get 'tickets/create'
+
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.

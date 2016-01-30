@@ -2,23 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*HOME*/
 .borderz {
   padding: 2px 0 0 2px !important;
 }
 .ongoing, .best, .footer, .header {
   border: solid black 1px;
 }
-.header, .footer{
+.header{
   background: #e0e0e0;
   height: 70px;
   
   }
 .ongoing{
   background: #ffedb8;
-  height: 640px;
+  height: 720px;
 
 }
 .best{
   background: #c7daf6;
-  height: 640px;
+  height: 720px;
+}
+
+.footer{
+   position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+    background: #e0e0e0;
+    height: 70px;
+}
+
+.sign_in {
+  z-index: 999;
+}
+
+
+/*SHOW PLAY*/
+.show_play{
+  margin-top: 100px;
 }

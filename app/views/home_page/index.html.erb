@@ -1,7 +1,7 @@
+<p id="notice"><%= notice %></p>
 <section>
   <div class="row">
-    <div class="col-md-8 borderz">
-    <div class= "ongoing">
+    <div class="col-md-8 borderz ongoing">
       <h2>A l'affiche</h2>
         <%@plays.each do |play|%>
          <ul>  
@@ -9,11 +9,8 @@
          </ul>
         <%end%>
     </div>
-    </div>
-    <div class="col-md-4 borderz">
-    <div class= "best">
+    <div class="col-md-4 borderz best">
       <h2>Top 5</h2>
-    </div>
     </div>
   </div>
 </section>

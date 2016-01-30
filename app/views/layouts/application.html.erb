@@ -8,24 +8,39 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 </head>
 <body>
-<div class="container">
-  <header>
-      <div class="row">
-        <div class="col-md-12 borderz ">
-            <div class= "header">
-              <h1>La comedia del map</h1>
-            </div>
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
 
-        </div>
+
+<div class="container">
+  <header class="navbar-fixed-top header">
+    <div class="row">
+      <div class="col-md-12 borderz ">
+        <h1 class="logo"><%=link_to "La comedia del map", root_path%></h1>
+          <p class="navbar-text pull-right sign_in">
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <% else %>
+              <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+              <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+            <% end %>
+          </p>
       </div>
+    </div>
+    </div>
   </header>
 
 <%= yield %>
 
-  <footer>
+  <footer class="footer">
     <div class="row">
       <div class="col-md-12 borderz">
-          <div class= "footer"></div>
 
       </div>
     </div>

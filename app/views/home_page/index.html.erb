@@ -4,7 +4,9 @@
     <div class= "ongoing">
       <h2>A l'affiche</h2>
         <%@plays.each do |play|%>
-          <%=link_to "#{play.title}", play_path(play)%>
+         <ul>  
+            <li><%=link_to "#{play.title}", play_path(play)%></li>
+         </ul>
         <%end%>
     </div>
     </div>
@@ -15,3 +17,5 @@
     </div>
   </div>
 </section>
+
+

@@ -9,7 +9,7 @@ class TicketsController < ApplicationController
       if @ticket.save
         redirect_to ticket_path(@ticket)
       else
-        redirect_to play_path, notice: "Vous avez omis un champ ou la pièce est complète"
+        redirect_to :back, notice: "Vous avez omis un champ ou la pièce est complète"
       end
   end
 

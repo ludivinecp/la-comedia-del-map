@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'home_page#index'
   resources :plays
   resources :tickets
+  resources :ongoing_plays
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

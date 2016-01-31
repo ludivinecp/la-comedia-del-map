@@ -21,3 +21,7 @@ section {
 .logo {
   display : inline;
 }
+
+.alert{
+  margin-top: 4%;
+}

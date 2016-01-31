@@ -12,21 +12,22 @@ Play.create([{ title: 'Tartuffe',
                synopsys: "L’auteur nous fait pénétrer au sein d’une famille honnête et paisible, tout à coup troublée et désunie par 
 la seule présence d’un étranger hypocrite et faux dévot. Tartufe, qui a su s’emparer de l’esprit de la grand-mère, Mme Pornelle, et de
  son fils, Orgon, qui donne asile au pieux personnage.
-"
+",
+           theater_id: 1
 }])
 Play.create([{ title: 'La grande évasion',
            date_start: 18/02/16,
            date_end: 18/02/16,
            synopsys: "elle ci devant se faire devant le ministre de la justice en visite à la prison. 
 De répétitions foireuses en tentatives improbables, ils vont nouer une complicité joueuse et délirante.
-A défaut de scier les barreaux, les voilà partis pour une évasion artistique...."
+A défaut de scier les barreaux, les voilà partis pour une évasion artistique....",
+           theater_id: 1
 }])
 Play.create([{ title: 'Le clan des divorcées',
            date_start: 11/02/16,
            date_end: 11/02/16,
-           synopsys: "Trois femmes divorcent et partagent le même appartement, Stéphanie d'Humilly de Malanpry la bourgeoise, Mary Bybowl la british délurée et Brigitte la rurale. Stéphanie d'Humily de Malanpry, une bourgeoise qui vient de quitter un berger ardéchois décide de changer de vie en partant...
-
-"
+           synopsys: "Trois femmes divorcent et partagent le même appartement, Stéphanie d'Humilly de Malanpry la bourgeoise, Mary Bybowl la british délurée et Brigitte la rurale. Stéphanie d'Humily de Malanpry, une bourgeoise qui vient de quitter un berger ardéchois décide de changer de vie en partant...",
+           theater_id: 1
 }])
 
 

@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20160130212837) do
+
   create_table "actors", force: :cascade do |t|
     t.string   "firstname"
     t.string   "lastname"

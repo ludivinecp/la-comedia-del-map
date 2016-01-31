@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "Comedia del map<poneo.mailer@gmail.com>"
+  default from: "Comedia del map<lacomediadelmap@gmail.com>"
   layout 'mailer'
 end

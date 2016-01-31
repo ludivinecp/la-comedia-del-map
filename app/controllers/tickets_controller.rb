@@ -8,8 +8,9 @@ class TicketsController < ApplicationController
     @ticket = current_user.tickets.build(ticket_params) 
       if @ticket.save
         redirect_to ticket_path(@ticket)
+        @ticket.mailer_booking_confirmation
       else
-        redirect_to :back, notice: "Vous avez omis un champ ou la pièce est complète"
+        redirect_to :back, notice: "Vous avez omis un champ "
       end
   end
 

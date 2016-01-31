@@ -16,4 +16,8 @@ class Ticket < ActiveRecord::Base
           false
         end
   end
+
+  def mailer_booking_confirmation
+    BookingMailer.new_booking(self).deliver_now
+  end 
 end

@@ -17,6 +17,7 @@ class TicketsController < ApplicationController
   def show
     @ticket = Ticket.find(params[:id])
     @booking_play = Play.find(@ticket.plays_id)
+    @price = @ticket.final_price
   end
  
  private

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130212837) do
+ActiveRecord::Schema.define(version: 20160131171007) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "firstname"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160130212837) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "theater_id"
+    t.float    "base_price"
   end
 
   add_index "plays", ["theater_id"], name: "index_plays_on_theater_id"

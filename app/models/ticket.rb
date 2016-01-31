@@ -17,6 +17,11 @@ class Ticket < ActiveRecord::Base
         end
   end
 
+  def final_price
+    play = Play.find(self.plays_id)
+    (play.base_price * self.number_of_people) /100
+  end
+
   def mailer_booking_confirmation
     BookingMailer.new_booking(self).deliver_now
   end 

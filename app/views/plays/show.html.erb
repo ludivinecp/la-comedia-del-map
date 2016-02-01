@@ -1,0 +1,35 @@
+<section>
+<%= link_to "Retour", url_for(:back), class:'btn btn-success retour' %>
+
+<h1><%=@play.title%></h1>
+  <p>Début: <%=@play.try(:date_start).strftime("%d/%m/%Y")%> à <%=@play.try(:date_start).strftime("%I:%M")%>
+  </br>
+    Fin: <%=@play.try(:date_end).strftime("%d/%m/%Y")%> à <%=@play.try(:date_end).strftime("%I:%M")%>
+  </p>
+  <p>Prix : <%= @play.price %>€ / personne (Tarif de groupe : moins 10% à partir de 10 personnes)</p>
+
+  <p>Synopsys : <%=@play.synopsys%></p>
+
+  <p>Acteurs :
+  <%@play.actors.each do |actor|%>
+    <ul>
+      <li><%=actor.try(:firstname)%> <%=actor.try(:lastname)%></li>
+    </ul>
+  <%end%>
+  </p>
+
+  <%=form_for @ticket, url: tickets_path, method: :post, action: :create do |f|%>
+    <div class="col-md-4 col-md-offset-4">
+      <%if user_signed_in?%>
+          <%= f.label :nombre_de_personnes%>
+          <%= f.number_field :number_of_people, class:'form-control',  :value => 1, min: 1, max: @remaining%>
+          <%= f.date_field :date %>
+          <%= f.time_field :hour %>
+          <%=f.hidden_field :plays_id, :value => @play.id%>
+          <%=f.submit "Reserver !", class:'btn-success reserver-button'%>
+      <%else%>
+        <%=link_to "Connectez-vous afin de réserver", new_user_session_path%>
+      <%end%>
+    </div>
+  <%end%>
+</section>

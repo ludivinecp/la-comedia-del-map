@@ -2,9 +2,9 @@
 <%= link_to "Retour", url_for(:back), class:'btn btn-success retour' %>
 
 <h1><%=@play.title%></h1>
-  <p>Début: <%=@play.date_start.try(:date_start)%> à <%=@play.date_start.try(:date_start)%>
+  <p>Début: <%=@play.try(:date_start).strftime("%d/%m/%Y")%> à <%=@play.try(:date_start).strftime("%I:%M")%>
   </br>
-    Fin: <%=@play.try(:date_end)%> à <%=@play.try(:date_end)%>
+    Fin: <%=@play.try(:date_end).strftime("%d/%m/%Y")%> à <%=@play.try(:date_end).strftime("%I:%M")%>
   </p>
   <p>Prix : <%= @play.price %>€ / personne</p>
   <p>Synopsys : <%=@play.synopsys%></p>
